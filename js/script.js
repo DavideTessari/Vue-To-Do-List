@@ -21,3 +21,28 @@
 // il todo alla lista.
 // 2- cliccando sul testo dell'item, invertire il valore della proprietà done 
 // del todo corrispondente (se done era uguale a false, impostare true e viceversa)
+
+
+new Vue({
+    el: '#app',
+    data: {
+        newTodo: '',
+        todos: [
+            { text: 'Fare la spesa', done: false }
+        ]
+    },
+    methods: {
+        addTodo() {
+            if (this.newTodo.trim() !== '') {
+                this.todos.push({ text: this.newTodo, done: false });
+                this.newTodo = '';
+            }
+        },
+        deleteTodo(index) {
+            this.todos.splice(index, 1);
+        }
+    }
+});
+
+
+
