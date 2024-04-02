@@ -40,9 +40,18 @@ new Vue({
         },
         deleteTodo(index) {
             this.todos.splice(index, 1);
+        },
+        handleEnter(event) {
+            if (event.key === 'Enter') {
+                this.addTodo();
+            }
+        },
+        toggleDone(index) {
+            this.todos[index].done = !this.todos[index].done;
         }
     }
-});    
+});
+
 
 
 
